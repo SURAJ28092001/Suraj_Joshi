@@ -7,27 +7,101 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 h4{font-family:"Bookman Old Style"; color:DarkRed; font-size:19px;}
 footer{font-family:"Arial";color:white;}
 .f{color:black;}
+.dropbtn {
+  background-color:#4CAF50;
+  color: white;
+  padding: 30px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:khaki;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color:#B22222}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+html,body{
+position:fixed;
+top:0,
+bottom:0;
+left:0;
+right:0;
+}
+
+#wrapper{
+position:fixed;
+top:0px;
+}
 </style>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <script language="javascript">  
 function message()
 {
+if(Contact.name.value != "" && Contact.mail.value != "" && Contact.query.value != "")
+{
+if(Contact.mail.value.indexOf('@') != -1)
 alert("Thank You. I will be contacting you soon :)")
+
+else
+alert("Please fill the email field correctly.")
+}
+else
+alert("Please fill all the required fields.")
+
 }
 </script>									 
      
 </head>
 <body>
 
-
-
-<div class="row">
-  <pre<h4><div class="col-sm-2" style="background-color:khaki;">             </div></h4></pre>
   <h4><div class="col-sm-2" style="background-color:khaki;" id="Home">HOME</div></h4>
   <a href="#About" alink=DarkRed vlink=DarkRed link=DarkRed><h4><div class="col-sm-2" style="background-color:khaki;">ABOUT</div></h4></a>
   <a href="#My" alink=DarkRed vlink=DarkRed link=DarkRed><h4><div class="col-sm-3" style="background-color:khaki;">MY EXPERIENCES</div></h4></a>
@@ -35,14 +109,11 @@ alert("Thank You. I will be contacting you soon :)")
   <a href="#connect" alink=DarkRed vlink=DarkRed link=DarkRed><h4><div class="col-sm-2" style="background-color:khaki;">CONTACT ME</div></h4></a>
 </div>
 
-
-
-<div class="container">
 <div class="jumbotron" style="background-color:PaleGoldenRod;">
   <center><h1 ID = "pqr">Who am I ?</h1>
 	<h3>This Website will help You :)</center>
  
-</div></div>
+</div>
 
 
 <style>
@@ -60,13 +131,19 @@ p{color:FireBrick;font-size:20px;font-family:"Times New Roman";}
 </marquee>
 
 <center><h1 class="sub" id="About">ABOUT</h1></center>
-<div class="row">
-	<a href="#Me" alink=DarkRed vlink=DarkRed link=DarkRed><h4><div class="col-sm-6" style="background-color:khaki;">ABOUT ME</div></h4></a>
-	<a href="#Career" alink=DarkRed vlink=DarkRed link=DarkRed><h4><div class="col-sm-6" style="background-color:khaki;">MY CAREER OPTION</div></h4></a>
+
+<div class="dropdown">
+  <button class="dropbtn">Navigate through Me</button>
+  <div class="dropdown-content">
+  <a href="#Me" alink=DarkRed vlink=DarkRed link=DarkRed><h4>ABOUT ME</h4></a>
+  <a href="#Career" alink=DarkRed vlink=DarkRed link=DarkRed><h4>MY CAREER OPTION</h4></a>
+  </div>
 </div>
+
+
 <a href=#Home><h5 align=right>Back To Home</h5></a>
 <pre><H3 id="Me"><u>A Brief Description of Myself</u></h3><a href=#About><h5 align=right>Back To About</h5></a>
-<p>My name is Suraj Joshi. I, in myself is a combination of three states of India &#128517.
+<div class="content"><p>My name is Suraj Joshi. I, in myself is a combination of three states of India &#128517.
 
 Didn't get what I said?
 
@@ -84,16 +161,19 @@ Computer as I love programming and of course Computers. &#128522</p>
 <li> I have been living in Pune, which is the headquarters of the Army's Southern Command, and likewise I have been able to meet
 many Army officers. So these meetings have inoculated in me the love and respect for the Army Uniform.
 
-</p></pre>
+</p></div></pre>
 <br>
 <center><h1 class="sub" id="My">MY EXPERIENCES</h1></center>
-<div class="row">
-	<a href="#School" alink=DarkRed vlink=DarkRed link=DarkRed><h4><div class="col-sm-3" style="background-color:khaki;">SCHOOL</div></h4></a>
-	<a href="#Junior" alink=DarkRed vlink=DarkRed link=DarkRed><h4><div class="col-sm-3" style="background-color:khaki;">JUNIOR COLLEGE</div></h4></a>
-	<a href="#nda" alink=DarkRed vlink=DarkRed link=DarkRed><h4><div class="col-sm-3" style="background-color:khaki;">NDA & SSB</div></h4></a>
-	<a href="#Engg" alink=DarkRed vlink=DarkRed link=DarkRed><h4><div class="col-sm-3" style="background-color:khaki;">ENGINEERING</div></h4><br>
-
+<div class="dropdown">
+  <button class="dropbtn">Navigate through Me</button>
+  <div class="dropdown-content">
+  <a href="#School" alink=DarkRed vlink=DarkRed link=DarkRed><h4>SCHOOL</h4></a>
+  <a href="#Junior" alink=DarkRed vlink=DarkRed link=DarkRed><h4>JUNIOR COLLEGE</h4></a>
+<a href="#nda" alink=DarkRed vlink=DarkRed link=DarkRed><h4>NDA & SSB</h4></a>
+<a href="#Engg" alink=DarkRed vlink=DarkRed link=DarkRed><h4>ENGINEERING</h4></a>
+  </div>
 </div>
+
 <p>	<a href=#Home><h5 align=right>Back to Home</h5></a></p>
 <pre><p>
 In my life I had many good experiences as well as those which were unassertive. In my opinion, life is full of challenges
@@ -173,18 +253,35 @@ Right now, I am in my second year and hope to gain more great experiences which 
 <br>
 <center><h1 class="sub" id="Photo">PHOTO GALLERY</h1></center>
 <a href=#Home><h5 align=right>Back to Home</h5></a></p>
-<marquee behavior="scroll" direction="left";">
-<img src="Course.jpg" width=900px height=500px>
-<img src="Internship_1.jpg" width=900px height=500px>
-<img src="Internship_2.jpg" width=900px height=500px>
-<img src="crypto.jpg" width=980px height=500px>
-<img src="Techwiz.jpg" width=900px height=500px>
-<img src="tenth.jpg" width=900px height=500px>
-<img src="badminton.jpg" width=900px height=500px>
-<img src="nstse.jpg" width=900px height=500px>
-<img src="english.jpg" width=900px height=500px>
-<br><br>
-</marquee>
+<p>Click the pictures to view</p>
+<div class="gallery">
+  <a target="_blank" href="Course.jpg">
+   <img src="Course.jpg" width="600" height="400"></a>
+<a target="_blank" href="Internship_1.jpg">
+   <img src="Internship_1.jpg" width="600" height="400"></a></div>
+
+<div class="gallery">
+<a target="_blank" href="Internship_2.jpg">
+   <img src="Internship_2.jpg" width="600" height="400"></a>
+<a target="_blank" href="crypto.jpg">
+   <img src="crypto.jpg" width="600" height="400"></a></div>
+
+<div class="gallery">
+<a target="_blank" href="Techwiz.jpg">
+   <img src="Techwiz.jpg" width="600" height="400"></a>
+<a target="_blank" href="tenth.jpg">
+   <img src="tenth.jpg" width="600" height="400"></a></div>
+
+<div class="gallery">
+<a target="_blank" href="badminton.jpg">
+   <img src="badminton.jpg" width="600" height="400"></a>
+<a target="_blank" href="nstse.jpg">
+   <img src="nstse.jpg" width="600" height="400"></a></div>
+
+<div class="gallery">
+<a target="_blank" href="english.jpg">
+   <img src="english.jpg" width="600" height="400">
+  </a></div><br><br>
 <footer style="background-color:#3e4444;" id="connect">
 <div class="container">
   <div class="row">
@@ -208,9 +305,10 @@ Right now, I am in my second year and hope to gain more great experiences which 
 	<a href="https://www.linkedin.com/in/suraj-joshi-95a713209"><i class="fa fa-linkedin" style="font-size:48px;color:LightBlue"></i></a>
 	<BR><br>
 	Or drop me mail on my gmail : <br><br>
-	<a href="mailto:surman2825@gmail.com"><i class="fa fa-google" style="font-size:48px;color:red"></i></a>
+	<a href="mailto:surman2825@gmail.com"><i class="fa fa-google" style="font-size:48px;color:red"></i></a><br><br>
 </div>
 </div>
 </footer>
 </body>
 </html>
+
